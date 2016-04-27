@@ -170,7 +170,7 @@ module Handsoap
     #   :request_content_type => Content-Type of HTTP request.
     # You must supply either :version or both :envelope_namspace and :request_content_type.
     # :version is simply a shortcut for default values.
-    def self.endpoint(args = {})
+    def endpoint(args = {})
       @uri = args[:uri] || raise("Missing option :uri")
       if args[:version]
         soap_namespace = { 1 => 'http://schemas.xmlsoap.org/soap/envelope/', 2 => 'http://www.w3.org/2003/05/soap-envelope' }
@@ -184,13 +184,13 @@ module Handsoap
         raise("Missing option :envelope_namespace, :request_content_type or :version")
       end
     end
-    def self.envelope_namespace
+    def envelope_namespace
       @envelope_namespace
     end
-    def self.request_content_type
+    def request_content_type
       @request_content_type
     end
-    def self.uri
+    def uri
       @uri
     end
     @@instance = {}
