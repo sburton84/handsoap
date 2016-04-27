@@ -204,15 +204,6 @@ module Handsoap
         super
       end
     end
-    def envelope_namespace
-      self.class.envelope_namespace
-    end
-    def request_content_type
-      self.class.request_content_type
-    end
-    def uri
-      self.class.uri
-    end
     def http_driver_instance
       Handsoap::Http.drivers[Handsoap.http_driver].new
     end
